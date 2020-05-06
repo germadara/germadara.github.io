@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{titulo}}</h1>
+
+        <input type="text" v-model="nuevojuego" placeholder="Nombre del juego">
+        <input type="text" v-model="nuevacategoria" placeholder="Categoria del juego">
+        <button @click="agregarjuego">Agregar juego</button>
+        <ul>
+            <li v-for='juego of juegos'>
+                {{juego.nombre}}
+                <span v-if="juego.favorito == 'true'"> - Este es el mas pro de todos</span>
+            </li>
+        </ul>
+    </div>
+</body>
+<footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/german.js"> </script>
+</footer>
+</html>
