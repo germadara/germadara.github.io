@@ -9,15 +9,19 @@
     <div id="app">
         <h1>{{titulo}}</h1>
 
-        <input type="text" v-model="nuevojuego" placeholder="Nombre del juego">
-        <input type="text" v-model="nuevacategoria" placeholder="Categoria del juego">
+        <input type="text" v-model="nuevojuego" placeholder="Nombre del juego" v-on:keyup.enter="agregarjuego">
         <button @click="agregarjuego">Agregar juego</button>
         <ul>
             <li v-for='juego of juegos'>
                 {{juego.nombre}}
-                <span v-if="juego.favorito == 'true'"> - Este es el mas pro de todos</span>
+                <input type="number" v-model="juego.cantidad">
+                <button @click="juego.cantidad = juego.cantidad -1 ">-</button><button @click="juego.cantidad = juego.cantidad + 1 ">+</button>
+                <span v-if="juego.cantidad === 0"> - Sin Stock</span>
+                <span v-if="juego.cantidad < 0"> - No mames wey</span>
+                
             </li>
         </ul>
+        <h4>Total:{{sumarJuegos}} </h4>
     </div>
 </body>
 <footer>

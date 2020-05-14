@@ -2,21 +2,31 @@ const app = new Vue({
 
     el: '#app',
     data: {
-        titulo: 'Lista de juegos de german',
+        titulo: 'Recomiendame un juego!',
         juegos: [
-            {nombre:'halo 5', favorito:'true', categoria:'Shooter'},
-            {nombre:'GTA', favorito:'false', categoria:'No se que es'},
-            {nombre:'Need For Speed', favorito:'false', categoria:'Carreritas dijo jhon'}
+            {nombre:'halo 5', cantidad:0},
+            {nombre:'GTA', cantidad:0},
+            {nombre:'Need For Speed', cantidad:0}
             
         ],
         nuevojuego: "",
-        nuevacategoria: ""
+        totalJuegos: 0
     },
     methods: {
         agregarjuego(){
             this.juegos.push({
-                nombre: this.nuevojuego, favorito:'false', categoria:this.nuevacategoria
-            })
+                nombre: this.nuevojuego, cantidad: 0
+            });
+            this.nuevojuego = '';
+        }
+    },
+    computed: {
+        sumarJuegos(){
+            this.totalJuegos = 0;
+            for(juego of this.juegos){
+                this.totalJuegos = this.totalJuegos + juego.cantidad;
+            }
+            return this.totalJuegos
         }
     }
 })
