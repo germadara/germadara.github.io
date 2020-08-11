@@ -5,27 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<link rel="stylesheet" href="css/custom.css">
+<body class="prueba-vue">
     <div id="app">
-        <h1>{{titulo}}</h1>
-
-        <input type="text" v-model="nuevojuego" placeholder="Nombre del juego" v-on:keyup.enter="agregarjuego">
-        <button @click="agregarjuego">Agregar juego</button>
-        <ul>
-            <li v-for='juego of juegos'>
-                {{juego.nombre}}
-                <input type="number" v-model="juego.cantidad">
-                <button @click="juego.cantidad = juego.cantidad -1 ">-</button><button @click="juego.cantidad = juego.cantidad + 1 ">+</button>
-                <span v-if="juego.cantidad === 0"> - Sin Stock</span>
-                <span v-if="juego.cantidad < 0"> - No mames wey</span>
-                
-            </li>
-        </ul>
-        <h4>Total:{{sumarJuegos}} </h4>
+        <div class="nav-tabs">
+            <button id="" v-for="select in menu" :class="[select.estado,select.clase]" @click="activatemenu(select)">{{select.text}}</button>
+        </div>
+        <section class="juegos" :class="[clase_juegos]">
+            <h2>TITULO</h2>
+            <input type="text" v-model="nuevojuego" placeholder="Nombre del juego" v-on:keyup.enter="agregarjuego">
+            <button @click="agregarjuego">Agregar juego</button>
+            <ul>
+                <li v-for='juego of juegos'>
+                    {{juego.nombre}}
+                    <input type="number" v-model="juego.cantidad">
+                    <button @click="juego.cantidad = juego.cantidad -1 ">-</button><button @click="juego.cantidad = juego.cantidad + 1 ">+</button>
+                    <span v-if="juego.cantidad === 0"> - Sin Stock</span>
+                    <span v-if="juego.cantidad < 0"> - No mames wey</span>
+                    
+                </li>
+            </ul>
+            <h4>Total:{{sumarJuegos}} </h4>
+        </section>
+        <section class="colores" :class="[clase_colores]">
+            <h2>TITULO COLORES</h2>
+        </section>
     </div>
 </body>
 <footer>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="assets/vue.js"></script>
     <script src="js/german.js"> </script>
 </footer>
 </html>

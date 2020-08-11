@@ -1,0 +1,33 @@
+body.prueba-vue{
+    max-width: 1220px;
+    margin: auto;
+    margin-top: 20px;
+    background-color: #cacaca;
+    .nav-tabs {
+        flex-direction: row;
+        width: 100%;
+        display: flex;
+        button {
+            width: 100%;
+            display: inline-block;
+        }
+    } 
+    div{
+        background:red;
+    }
+    .seccion-juegos {
+        padding: 10px;
+        margin: auto;
+        text-align: center;
+    }
+}
+.desactivado{
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+}
+.activo{
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
