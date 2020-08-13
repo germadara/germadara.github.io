@@ -39,7 +39,15 @@ body.prueba-vue {
     display: flex; }
     body.prueba-vue .nav-tabs button {
       width: 100%;
-      display: inline-block; }
+      display: inline-block;
+      font-size: 20px;
+      border-radius: 20px 20px 0px 0px; }
+      body.prueba-vue .nav-tabs button.off {
+        background: #c3c3c3;
+        border-color: #737373; }
+      body.prueba-vue .nav-tabs button.on {
+        background: white;
+        border-color: #eaeaea; }
   body.prueba-vue div {
     background: red; }
   body.prueba-vue .seccion-juegos {

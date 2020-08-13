@@ -10,6 +10,16 @@ body.prueba-vue{
         button {
             width: 100%;
             display: inline-block;
+            font-size: 20px;
+            border-radius: 20px 20px 0px 0px;
+            &.off {
+                background: #c3c3c3;
+                border-color: #737373;
+            }
+            &.on {
+                background: white;
+                border-color: #eaeaea;
+            }
         }
     } 
     div{
